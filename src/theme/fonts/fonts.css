@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Karla';
+  font-weight: 400;
+  src: url(./Karla-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Markazi Text';
+  font-weight: 500;
+  src: url(./MarkaziText-Medium.ttf) format('truetype');
+}
