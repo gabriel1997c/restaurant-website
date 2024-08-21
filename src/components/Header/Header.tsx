@@ -1,5 +1,5 @@
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { AppBar, Box, Button, Drawer, Grid, Toolbar } from '@mui/material';
+import { AppBar, Box, Button, Drawer, Grid, List, ListItem, Toolbar } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import NavItem from 'components/NavItem';
 import { navItems } from 'constants';
@@ -54,9 +54,16 @@ const Header: React.FC<IHeader> = ({ enableLogoClick = true }: IHeader) => {
             sx={styles.navLinksContainer}
           >
             <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
-              {navItems.map((item, idx) => (
-                <NavItem key={idx} item={item} idx={idx} />
-              ))}
+              <List>
+                {navItems.map((item, idx) => (
+                  <ListItem
+                    disableGutters
+                    sx={styles.listItems}
+                  >
+                    <NavItem key={idx} item={item} idx={idx} />
+                  </ListItem>
+                ))}
+              </List>
             </Box>
             <Box sx={{ display: { xs: 'block', sm: 'block', md: 'none' } }}>
               <Button
@@ -74,12 +81,19 @@ const Header: React.FC<IHeader> = ({ enableLogoClick = true }: IHeader) => {
                 onClose={handleDrawerToggle}
                 sx={styles.drawer}
               >
-                {navItems.map((item, idx) => (
-                  <Fragment key={`nav-items-menu-item-${idx}`}>
-                    <NavItem key={idx} item={item} idx={idx} />
-                    {idx !== navItems.length - 1 && <Divider />}
-                  </Fragment>
-                ))}
+                <List>
+                  {navItems.map((item, idx) => (
+                    <Fragment key={`nav-items-menu-item-${idx}`}>
+                      <ListItem
+                        disableGutters
+                        sx={styles.listItems}
+                      >
+                        <NavItem key={idx} item={item} idx={idx} />
+                        {idx !== navItems.length - 1 && <Divider />}
+                      </ListItem>
+                    </Fragment>
+                  ))}
+                </List>
               </Drawer>
             </Box>
           </Grid>

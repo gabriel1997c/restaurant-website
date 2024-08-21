@@ -13,6 +13,9 @@ export const styles = {
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
+  listItems: {
+    display: 'inline',
+  },
   appBar: (theme) => ({
     backgroundColor: theme.palette.silver.lighter,
   }),

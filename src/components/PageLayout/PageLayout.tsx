@@ -16,9 +16,11 @@ const PageLayout: React.FC<IPageLayout> = ({ sx, children }: IPageLayout) => {
       }}
     >
       <Header />
-      <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        {children}
-      </Box>
+      <main>
+        <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          {children}
+        </Box>
+      </main>
       <Footer />
     </Box>
   );
