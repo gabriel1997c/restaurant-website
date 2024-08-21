@@ -27,7 +27,7 @@ const Header: React.FC<IHeader> = ({ enableLogoClick = true }: IHeader) => {
 
   return (
     <AppBar position="static" elevation={0} component="header" sx={styles.appBar}>
-      <Toolbar disableGutters component="nav">
+      <Toolbar disableGutters>
         <Grid container sx={styles.outerContainer}>
           <Grid
             container
@@ -51,6 +51,7 @@ const Header: React.FC<IHeader> = ({ enableLogoClick = true }: IHeader) => {
             sm={'auto'}
             zeroMinWidth
             wrap="nowrap"
+            component="nav"
             sx={styles.navLinksContainer}
           >
             <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
