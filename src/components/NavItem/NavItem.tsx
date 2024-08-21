@@ -8,7 +8,7 @@ const NavItem: React.FC<INavItem> = ({ item, idx }: INavItem) => (
   <Button
     key={`nav-items-menu-item-${idx}`}
     variant="text"
-    size="small"
+    size="medium"
     component={Link}
     to={item.url}
   >

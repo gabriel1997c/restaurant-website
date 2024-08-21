@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { Header } from 'components';
+import { Footer, Header } from 'components';
 
 import type { IPageLayout } from './types';
 
@@ -19,6 +19,7 @@ const PageLayout: React.FC<IPageLayout> = ({ sx, children }: IPageLayout) => {
       <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         {children}
       </Box>
+      <Footer />
     </Box>
   );
 };
