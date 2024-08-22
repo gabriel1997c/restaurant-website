@@ -11,7 +11,6 @@ const PageLayout: React.FC<IPageLayout> = ({ sx, children }: IPageLayout) => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
         height: '100vh',
       }}
     >

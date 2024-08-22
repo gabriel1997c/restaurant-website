@@ -42,7 +42,7 @@ const Header: React.FC<IHeader> = ({ enableLogoClick = true }: IHeader) => {
             }}
             onClick={enableLogoClick ? handleClickLogo : undefined}
           >
-            <Box component="img" src={logo} alt="logo" height={35} />
+            <Box component="img" src={logo} alt="logo" height={45} />
           </Grid>
           <Grid
             container
