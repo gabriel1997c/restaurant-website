@@ -3,15 +3,15 @@ export const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     [theme.breakpoints.down('md')]: {
-      px: 5,
+      px: theme.spacing(5),
     },
     [theme.breakpoints.up('md')]: {
-      px: 10,
+      px: theme.spacing(10),
     },
     [theme.breakpoints.up('lg')]: {
-      px: 15,
+      px: theme.spacing(15),
     },
-    py: 1,
+    py: theme.spacing(1),
   }),
   logoContainer: {
     justifyContent: 'flex-start',
@@ -34,7 +34,7 @@ export const styles = {
       boxSizing: 'border-box',
       width: 220,
       height: 'auto',
-      py: 1,
+      py: theme.spacing(1),
       textAlign: 'center',
     },
   }),

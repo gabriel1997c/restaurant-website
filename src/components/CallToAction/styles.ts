@@ -5,15 +5,15 @@ export const styles = {
     display: 'flex',
     alignItems: 'center',
     [theme.breakpoints.down('md')]: {
-      px: 5,
+      px: theme.spacing(5),
     },
     [theme.breakpoints.up('md')]: {
-      px: 10,
+      px: theme.spacing(10),
     },
     [theme.breakpoints.up('lg')]: {
-      px: 15,
+      px: theme.spacing(15),
     },
-    py: 2,
+    px: theme.spacing(2),
     color: theme.palette.silver.main,
     position: 'relative',
   }),
