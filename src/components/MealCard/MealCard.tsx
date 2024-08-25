@@ -1,5 +1,8 @@
 import MopedIcon from '@mui/icons-material/Moped';
 import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { ORDER_URL } from 'constants';
+
+import { Link } from 'react-router-dom';
 
 import { styles } from './styles';
 import { IMealCard } from './types';
@@ -14,7 +17,7 @@ const MealCard: React.FC<IMealCard> = ({ meal }: IMealCard) => {
       </CardContent>
       <CardContent>
         <Typography variant="body2">{meal.description}</Typography>
-        <Button variant="contained" color="secondary">
+        <Button variant="contained" size="large" color="secondary" component={Link} to={ORDER_URL}>
           Order a delivery <MopedIcon />
         </Button>
       </CardContent>

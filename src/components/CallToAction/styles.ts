@@ -13,7 +13,7 @@ export const styles = {
     [theme.breakpoints.up('lg')]: {
       px: theme.spacing(15),
     },
-    px: theme.spacing(2),
+    py: theme.spacing(2),
     color: theme.palette.silver.main,
     position: 'relative',
   }),

@@ -58,7 +58,7 @@ const Header: React.FC<IHeader> = ({ enableLogoClick = true }: IHeader) => {
               <List>
                 {navItems.map((item, idx) => (
                   <ListItem disableGutters sx={styles.listItems}>
-                    <NavItem key={idx} item={item} idx={idx} />
+                    <NavItem size="large" key={idx} item={item} idx={idx} />
                   </ListItem>
                 ))}
               </List>
@@ -83,7 +83,7 @@ const Header: React.FC<IHeader> = ({ enableLogoClick = true }: IHeader) => {
                   {navItems.map((item, idx) => (
                     <Fragment key={`nav-items-menu-item-${idx}`}>
                       <ListItem disableGutters sx={styles.listItems}>
-                        <NavItem key={idx} item={item} idx={idx} />
+                        <NavItem size="large" key={idx} item={item} idx={idx} />
                         {idx !== navItems.length - 1 && <Divider />}
                       </ListItem>
                     </Fragment>

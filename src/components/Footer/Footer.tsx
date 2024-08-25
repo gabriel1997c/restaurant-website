@@ -36,7 +36,7 @@ const Footer = () => {
           <List>
             {navItems.map((item, idx) => (
               <ListItem disableGutters key={idx}>
-                <NavItem item={item} idx={idx} />
+                <NavItem size="small" item={item} idx={idx} />
               </ListItem>
             ))}
           </List>

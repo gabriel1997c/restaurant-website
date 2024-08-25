@@ -18,7 +18,7 @@ export const styles = {
     position: 'relative',
   }),
   paragraphs: {
-    maxWidth: '75%',
+    maxWidth: '85%',
   },
   bannerImage: {
     width: '100%',

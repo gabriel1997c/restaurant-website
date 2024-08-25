@@ -4,6 +4,7 @@ export interface INavItemProps {
 }
 
 export interface INavItem {
+  size: 'small' | 'medium' | 'large';
   item: INavItemProps;
   idx: number;
 }

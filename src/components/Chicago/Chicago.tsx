@@ -9,24 +9,31 @@ const Chicago: React.FC = () => {
     <Grid container component="section" sx={styles.outerContainer}>
       <Grid item xs={12} sm={6}>
         <Box sx={styles.paragraphs}>
-          <Typography variant="h1" pb={2} sx={styles.mainHeader}>Little Lemon</Typography>
-          <Typography variant="h3" pb={2}>Chicago</Typography>
-          <Typography variant="body1" pb={2}>Chef Marco</Typography>
-          <Typography variant="body2" pb={2}>
-            Welcome to Little Lemon! Our journey began with a simple idea: to bring fresh, vibrant
-            flavors to every meal. With over a decade of experience in Mediterranean cuisine, I
-            wanted to create dishes that highlight the natural zest of high-quality ingredients.
-            From our lemon herb chicken to our signature lemon tart, every dish at Little Lemon is
-            crafted with love and care. Join us and experience the sunshine in every bite.
+          <Typography variant="h1" pb={2} sx={styles.mainHeader}>
+            Little Lemon
           </Typography>
-          <Typography variant="body1" pb={2}>Chef Adrian</Typography>
-          <Typography variant="body2">
-            At Little Lemon, we believe in the joy of cooking and sharing meals. My passion for
-            culinary arts started in my family's kitchen, where I learned the value of tradition and
-            authenticity. Together with Chef Marco, we've crafted a menu that celebrates the bright,
-            citrusy notes of lemon, adding a refreshing twist to classic dishes. Our goal is to
-            provide you with a dining experience that's both delicious and memorable. Welcome to our
-            table!
+          <Typography variant="h3" pb={2}>
+            Chicago
+          </Typography>
+          <Typography variant="body1" pb={2}>
+            Chef Marco
+          </Typography>
+          <Typography variant="body3" pb={2}>
+            At Little Lemon, we bring vibrant Mediterranean flavors to Chicago. With a passion for
+            fresh, authentic ingredients, our menu features dishes like lemon-infused seafood and
+            savory stuffed grape leaves. Each creation celebrates the essence of Mediterranean
+            cuisine, blending tradition with a touch of innovation. Join us for a taste of the
+            Mediterranean right in the heart of the city.
+          </Typography>
+          <Typography variant="body1" pb={2} pt={2}>
+            Chef Adrian
+          </Typography>
+          <Typography variant="body3">
+            Welcome to Little Lemon, where Mediterranean tradition meets modern flair. My focus on
+            fresh, seasonal ingredients shines in every dish, from aromatic lamb kebabs to crisp
+            lemon-dressed salads. Partnering with Chef Marco, we've crafted a menu that brings the
+            warmth and flavor of the Mediterranean to Chicago. Discover a unique dining experience
+            with us.
           </Typography>
         </Box>
       </Grid>
@@ -35,14 +42,22 @@ const Chicago: React.FC = () => {
           <Grid item>
             <ImageList cols={1}>
               <ImageListItem sx={styles.bannerImage}>
-                <img src={chicagoChefsOneImage} alt="Chefs Marco and Adrian" style={{borderRadius: "50px"}}/>
+                <img
+                  src={chicagoChefsOneImage}
+                  alt="Chefs Marco and Adrian"
+                  style={{ borderRadius: '50px' }}
+                />
               </ImageListItem>
             </ImageList>
           </Grid>
           <Grid item>
             <ImageList cols={1}>
               <ImageListItem sx={styles.bannerImage}>
-                <img src={chicagoChefsTwoImage} alt="Chefs Marco and Adrian" style={{borderRadius: "50px"}}/>
+                <img
+                  src={chicagoChefsTwoImage}
+                  alt="Chefs Marco and Adrian"
+                  style={{ borderRadius: '50px' }}
+                />
               </ImageListItem>
             </ImageList>
           </Grid>
