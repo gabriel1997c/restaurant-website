@@ -1,22 +1,29 @@
 import { Box } from '@mui/material';
 import { Footer, Header } from 'components';
 
+
+
+import { styles } from './styles';
 import type { IPageLayout } from './types';
+
 
 const PageLayout: React.FC<IPageLayout> = ({ sx, children }: IPageLayout) => {
   console.log(sx);
   console.log(children);
   return (
     <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100vh',
-      }}
+      sx={styles.layoutContainer}
     >
       <Header />
       <main>
-        <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           {children}
         </Box>
       </main>

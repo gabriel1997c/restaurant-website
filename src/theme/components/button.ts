@@ -5,6 +5,7 @@ const button: Components<Theme>['MuiButton'] = {
     root: {
       borderRadius: 60,
       boxShadow: 'none',
+      minWidth: 0,
     },
     sizeSmall: ({ theme }) => ({
       ...theme.typography.label2,
@@ -12,11 +13,11 @@ const button: Components<Theme>['MuiButton'] = {
     }),
     sizeMedium: ({ theme }) => ({
       ...theme.typography.label1,
-      height: 28,
+      height: 24,
     }),
     sizeLarge: ({ theme }) => ({
       ...theme.typography.label1,
-      height: 36,
+      height: 30,
     }),
     textPrimary: ({ theme }) => ({
       '&:not(.Mui-disabled):hover': {

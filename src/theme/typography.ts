@@ -46,7 +46,7 @@ const typography = {
   },
   subtitle3: {
     fontSize: 22,
-    fontWeight: 600,
+    fontWeight: 400,
     lineHeight: '24px',
   },
   label1: {

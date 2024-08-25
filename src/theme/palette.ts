@@ -21,7 +21,7 @@ const palette = {
   },
   silver: {
     main: '#edefee',
-    lighter: '#f2f3f3',
+    lighter: '#fafafa',
     darker: '#a5a7a6',
   },
   charcoal: {

@@ -1,10 +1,13 @@
-import { PageLayout, CallToAction } from 'components';
+import { PageLayout, CallToAction, Specials, CustomersSay, Chicago } from 'components';
 
 function NotFound() {
   return (
     <>
       <PageLayout>
         <CallToAction />
+        <Specials />
+        <CustomersSay />
+        <Chicago />
       </PageLayout>
     </>
   );

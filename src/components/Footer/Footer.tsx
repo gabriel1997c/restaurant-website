@@ -4,51 +4,64 @@ import {
   Grid,
   List,
   ListItem,
-  ListItemText,
   ListItemButton,
   Typography,
 } from '@mui/material';
+import logo from 'assets/vertical-logo.png';
 import NavItem from 'components/NavItem';
-import { contactDetails, navItems, socialMediaDetails } from 'constants';
+import { contactDetails, navItems, socialMediaDetails } from 'data';
 
-import logo from '../../assets/vertical-logo.png';
 import { styles } from './styles';
 
 const Footer = () => {
   return (
     <BottomNavigation component="footer" sx={styles.footerBar}>
-      <Grid container sx={styles.outerContainer} spacing={2}>
-        <Grid item xs={12} sm={6} md={3}>
-          <Box component="img" src={logo} alt="logo" height={160} />
+      <Grid container sx={styles.outerContainer}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={styles.logoGridItem}
+        >
+          <Box
+            component="img"
+            src={logo}
+            alt="logo"
+            sx={styles.logoImg}
+          />
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Typography variant="body1">Doormat Navigation</Typography>
+
+        <Grid item xs={12} md={6}>
+          <Typography variant="subtitle2">Doormat Navigation</Typography>
           <List>
             {navItems.map((item, idx) => (
-              <ListItem disableGutters>
-                <NavItem key={idx} item={item} idx={idx} />
+              <ListItem disableGutters key={idx}>
+                <NavItem item={item} idx={idx} />
               </ListItem>
             ))}
           </List>
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Typography variant="body1">Contact</Typography>
+
+        <Grid item xs={12} md={6}>
+          <Typography variant="subtitle2">Contact</Typography>
           <List>
             {contactDetails.map((item, idx) => (
-              <ListItem disableGutters>
+              <ListItem disableGutters key={idx}>
                 <Box role="span">{item.icon}</Box>
-                <ListItemText key={idx} secondary={item.value} />
+                <Typography variant="subtitle3">{item.value}</Typography>
               </ListItem>
             ))}
           </List>
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Typography variant="body1">Social Media Links</Typography>
-          <List>
+
+        <Grid item xs={12} md={6}>
+          <Typography variant="subtitle2">Social Media</Typography>
+          <List sx={styles.socialMedia}>
             {socialMediaDetails.map((item, idx) => (
-              <ListItem disableGutters>
-                <Box role="span">{item.icon}</Box>
-                <ListItemButton key={idx} component="a" href={item.value}>{item.label}</ListItemButton>
+              <ListItem disableGutters key={idx}>
+                <ListItemButton component="a" href={item.value} sx={styles.iconHover}>
+                  {item.icon}
+                </ListItemButton>
               </ListItem>
             ))}
           </List>

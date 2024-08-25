@@ -1,4 +1,4 @@
-import { ABOUT_URL, HOME_URL, LOGIN_URL, MENU_URL, ORDER_URL, RESERVATIONS_URL } from './routes';
+import { ABOUT_URL, HOME_URL, LOGIN_URL, MENU_URL, ORDER_URL, RESERVATIONS_URL } from 'constants';
 
 export const navItems = [
   {

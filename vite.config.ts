@@ -20,6 +20,7 @@ export default defineConfig({
       assets: '/src/assets',
       components: '/src/components',
       constants: '/src/constants',
+      data: '/src/data',
       images: '/src/images',
       pages: '/src/pages',
       theme: '/src/theme',

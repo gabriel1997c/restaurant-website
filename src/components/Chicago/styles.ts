@@ -1,5 +1,5 @@
 export const styles = {
-  hero: (theme) => ({
+  outerContainer: (theme) => ({
     backgroundColor: theme.palette.primary.main,
     width: '100%',
     display: 'flex',
@@ -17,14 +17,13 @@ export const styles = {
     color: theme.palette.silver.main,
     position: 'relative',
   }),
-  banner: {
-    maxWidth: '80%',
+  paragraphs: {
+    maxWidth: '75%',
   },
-  bannerImageBox: {
-    zIndex: 10,
-    maxWidth: 300,
-    display: 'flex',
-    mb: -16,
+  bannerImage: {
+    width: '100%',
+    height: '100%',
+    maxWidth: '700px',
   },
   mainHeader: (theme) => ({
     color: theme.palette.lemon.main,
