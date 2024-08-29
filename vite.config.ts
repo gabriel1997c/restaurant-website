@@ -21,10 +21,12 @@ export default defineConfig({
       components: '/src/components',
       constants: '/src/constants',
       data: '/src/data',
+      fields: '/src/fields',
       images: '/src/images',
       pages: '/src/pages',
       theme: '/src/theme',
       types: '/src/types',
+      utils: '/src/utils',
     },
   },
 });

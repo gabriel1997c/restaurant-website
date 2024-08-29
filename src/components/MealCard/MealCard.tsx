@@ -12,11 +12,11 @@ const MealCard: React.FC<IMealCard> = ({ meal }: IMealCard) => {
     <Card sx={styles.card} component="article">
       <CardMedia component="img" image={meal.image} alt={meal.name} style={{ ...styles.mealImg }} />
       <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Typography variant="body1">{meal.name}</Typography>
-        <Typography variant="body1">{meal.price}</Typography>
+        <Typography variant="h3">{meal.name}</Typography>
+        <Typography variant="h3" color="secondary">{meal.price}</Typography>
       </CardContent>
       <CardContent>
-        <Typography variant="body2">{meal.description}</Typography>
+        <Typography variant="body3">{meal.description}</Typography>
         <Button variant="contained" size="large" color="secondary" component={Link} to={ORDER_URL}>
           Order a delivery <MopedIcon />
         </Button>

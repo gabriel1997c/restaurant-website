@@ -1,6 +1,7 @@
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { AppBar, Box, Button, Drawer, Grid, List, ListItem, Toolbar } from '@mui/material';
 import Divider from '@mui/material/Divider';
+import logo from 'assets/horizontal-logo.png';
 import NavItem from 'components/NavItem';
 import { navItems } from 'data';
 
@@ -8,7 +9,6 @@ import { Fragment } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import logo from 'assets/horizontal-logo.png';
 import { styles } from './styles';
 import type { IHeader } from './types';
 
@@ -57,7 +57,7 @@ const Header: React.FC<IHeader> = ({ enableLogoClick = true }: IHeader) => {
             <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
               <List>
                 {navItems.map((item, idx) => (
-                  <ListItem disableGutters sx={styles.listItems}>
+                  <ListItem disableGutters key={idx} sx={styles.listItems}>
                     <NavItem size="large" key={idx} item={item} idx={idx} />
                   </ListItem>
                 ))}
@@ -82,7 +82,7 @@ const Header: React.FC<IHeader> = ({ enableLogoClick = true }: IHeader) => {
                 <List>
                   {navItems.map((item, idx) => (
                     <Fragment key={`nav-items-menu-item-${idx}`}>
-                      <ListItem disableGutters sx={styles.listItems}>
+                      <ListItem disableGutters key={idx} sx={styles.listItems}>
                         <NavItem size="large" key={idx} item={item} idx={idx} />
                         {idx !== navItems.length - 1 && <Divider />}
                       </ListItem>

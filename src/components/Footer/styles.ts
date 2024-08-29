@@ -1,7 +1,7 @@
 export const styles = {
   outerContainer: (theme) => ({
     display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)', // Use fractional units for flexibility
+    gridTemplateColumns: 'repeat(4, 1fr)',
     alignItems: 'flex-start',
     [theme.breakpoints.down('md')]: {
       gridTemplateColumns: 'repeat(2, 1fr)',

@@ -8,8 +8,6 @@ import type { IPageLayout } from './types';
 
 
 const PageLayout: React.FC<IPageLayout> = ({ sx, children }: IPageLayout) => {
-  console.log(sx);
-  console.log(children);
   return (
     <Box
       sx={styles.layoutContainer}
@@ -18,7 +16,9 @@ const PageLayout: React.FC<IPageLayout> = ({ sx, children }: IPageLayout) => {
       <main>
         <Box
           sx={{
+            ...sx,
             display: 'flex',
+            minHeight: '55vh',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',

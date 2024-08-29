@@ -1,5 +1,4 @@
 import {
-  BottomNavigation,
   Box,
   Grid,
   List,
@@ -15,7 +14,7 @@ import { styles } from './styles';
 
 const Footer = () => {
   return (
-    <BottomNavigation component="footer" sx={styles.footerBar}>
+    <Box component="footer" sx={styles.footerBar}>
       <Grid container sx={styles.outerContainer}>
         <Grid
           item
@@ -67,7 +66,7 @@ const Footer = () => {
           </List>
         </Grid>
       </Grid>
-    </BottomNavigation>
+    </Box>
   );
 };
 
