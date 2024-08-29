@@ -12,4 +12,5 @@ export interface ITextField extends Omit<FieldProps<any>, 'field' | 'form' | 'me
   errors: {
     [key: string]: string;
   };
+  required?: boolean;
 }
