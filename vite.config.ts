@@ -22,6 +22,7 @@ export default defineConfig({
       constants: '/src/constants',
       data: '/src/data',
       fields: '/src/fields',
+      hooks: '/src/hooks',
       images: '/src/images',
       pages: '/src/pages',
       theme: '/src/theme',

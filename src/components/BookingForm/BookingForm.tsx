@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from '@mui/material';
+import { occasions, timeslots } from 'data';
 import {
   ChooseDateField,
   ChooseTimeField,
@@ -9,10 +10,14 @@ import {
   OccasionField,
 } from 'fields';
 import { Form, Formik } from 'formik';
+import useBookingManagement from 'hooks/useBookingManagement';
 import { getCurrentDate } from 'utils';
+import { filterAvailableTimeslots } from 'utils/filterAvailableTimeslots';
 import * as Yup from 'yup';
 
 import { useState } from 'react';
+
+import type { IBookingForm } from './types';
 
 const validationSchema = Yup.object({
   firstName: Yup.string().required('First Name is required'),
@@ -26,40 +31,36 @@ const validationSchema = Yup.object({
   occasion: Yup.string().required('Occasion is required'),
 });
 
-function BookingForm() {
-  const [submitted, setSubmitted] = useState(false);
+const initialValues = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  date: '',
+  time: '',
+  guests: 1,
+  occasion: '',
+};
+
+function BookingForm({ onSubmit }: IBookingForm) {
+  const [submitted, setSubmitted] = useState<boolean>(false);
   const currentDate = getCurrentDate();
-  const availableTimeslots = [
-    { value: '17:00', label: '17:00' },
-    { value: '18:00', label: '18:00' },
-    { value: '19:00', label: '19:00' },
-    { value: '20:00', label: '20:00' },
-    { value: '21:00', label: '21:00' },
-    { value: '22:00', label: '22:00' },
-  ];
-  const occasions = [
-    { value: 'Birthday', label: 'Birthday' },
-    { value: 'Anniversary', label: 'Anniversary' },
-  ];
+  const { bookedTimeslots, updateBookings } = useBookingManagement();
 
-  const initialValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    date: '',
-    time: '',
-    guests: 1,
-    occasion: '',
-  };
-
-  const onSubmit = (values, { setSubmitting, resetForm }) => {
+  const handleSubmit = (
+    values: typeof initialValues,
+    {
+      setSubmitting,
+      resetForm,
+    }: { setSubmitting: (isSubmitting: boolean) => void; resetForm: () => void },
+  ) => {
     setSubmitting(true);
     setTimeout(() => {
-      // not making a real API call, just logging the form values to console and mocking a delay
       console.log('Form Data:', values);
+      updateBookings(values.date, values.time);
       setSubmitted(true);
       setSubmitting(false);
       resetForm();
+      onSubmit();
     }, 1000);
   };
 
@@ -79,30 +80,43 @@ function BookingForm() {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={onSubmit}
+          onSubmit={handleSubmit}
         >
-          {({ isSubmitting, errors, touched, isValid, dirty }) => (
-            <Form>
-              <FirstNameField touched={touched} errors={errors} />
-              <LastNameField touched={touched} errors={errors} />
-              <EmailField touched={touched} errors={errors} />
-              <ChooseDateField touched={touched} errors={errors} minDate={currentDate} />
-              <ChooseTimeField touched={touched} errors={errors} options={availableTimeslots} />
-              <GuestsField touched={touched} errors={errors} />
-              <OccasionField touched={touched} errors={errors} options={occasions} />
+          {({ isSubmitting, errors, touched, isValid, dirty, values, setFieldValue }) => {
+            const filteredTimeslots = values.date
+              ? filterAvailableTimeslots(values.date, bookedTimeslots, timeslots)
+              : timeslots;
 
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                size="large"
-                disabled={!isValid || !dirty || isSubmitting}
-                sx={{ mt: 2 }}
-              >
-                Make a Reservation
-              </Button>
-            </Form>
-          )}
+            return (
+              <Form>
+                <FirstNameField touched={touched} errors={errors} />
+                <LastNameField touched={touched} errors={errors} />
+                <EmailField touched={touched} errors={errors} />
+                <ChooseDateField
+                  touched={touched}
+                  errors={errors}
+                  minDate={currentDate}
+                  onChange={(value: string) => {
+                    setFieldValue('date', value);
+                  }}
+                />
+                <ChooseTimeField touched={touched} errors={errors} options={filteredTimeslots} />
+                <GuestsField touched={touched} errors={errors} />
+                <OccasionField touched={touched} errors={errors} options={occasions} />
+
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  disabled={!isValid || !dirty || isSubmitting}
+                  sx={{ mt: 2 }}
+                >
+                  Make a Reservation
+                </Button>
+              </Form>
+            );
+          }}
         </Formik>
       )}
     </Box>
